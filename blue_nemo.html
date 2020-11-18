@@ -25,7 +25,7 @@
 			<h1 align=center id="naglowek"> Koło naukowe <span style="font-style:italic">"Robocik"</span> </h1>
 			</header>
 			
-				<nav  class="navbar navbar-expand-md bg-dark">
+				<nav  class="navbar navbar-expand-md navbar-dark">
 				
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false">
 						<span class="navbar-toggler-icon"></span>
@@ -49,8 +49,8 @@
 
 									<div class="dropdown-menu" aria-labelledby="submenu">
 									
-										<a class="dropdown-item" href="#">Blue Nemo</a>
-										<a class="dropdown-item" href="#"></a>
+										<a class="dropdown-item" href="blue_nemo.html">Projekt ROV</a>
+										<a class="dropdown-item disabled" href="#">Projekt AUV</a>
 										
 									<!--	<div class="dropdown-divider"></div>	-->
 									
@@ -64,27 +64,138 @@
 			
 					<img src="bluenemo/tło bluenemo.jpg" class="col-sm-12 img-fluid" id="ludzie" style="max-height:400px; width:100%;"></img>
 			
-				<div class="centered">Świat według autonomicznego robota podwodnego</div>
-				
+				<div class="centered">Świat według autonomicznego robota podwodnego...</div>
 			</div>
 			
+			<p>
+			<h2>Środowisko wodne to trudno dostępny dla człowieka rejon. W jego badaniu mogą jednak wspomóc nas m.in. pływające drony. Konstruowaniem takowych od lat zajmuje się Koło Naukowe Robocik.</h2>
+			</p>
 			
+			<p>
+			Choć KN Robocik istnieje już ponad 20 lat, znaczący rozwój zanotowało dopiero w ostatnich latach za sprawą skupiającego się na środowisku podwodnym projektu PWr Diving Crew. To właśnie odejście od schematycznych robotów typu line flower czy mini mouse i odnalezienie własnej niszy umożliwiło przekształcenie organizacji w jedno z kół strategicznych Politechniki Wrocławskiej. Dziś zrzesza około 60 członków, kształcących się na największych uczelniach we Wrocławiu.
+			</p>
+			
+			<p>
+			<h2> poznać podwodny świat</h2>
+			Pojazdy typu ROV (ang. Remotely Operated Vehicle) są zdalnie sterowanymi jednostkami pływającymi, mogącymi wykonywać pod powierzchnią wody specyficzne prace. Obecnie Robocik pracuje też nad dronami AUV (ang. Autonomous Underwater Vehicle), czyli autonomiczną odmianą ROV-ów. Funkcjonowanie w środowisku wodnym bez interakcji człowieka jest możliwe dzięki zestawowi różnorodnych sensorów.
+			</p>
+			
+		<div class="row">
+			<div class="column col-sm-4"> <!-- otwieranie lightboxa -->
+				<img src="bluenemo/lake.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow img-fluid">
+			</div>
+			
+			<div class="column col-sm-4">
+				<img src="bluenemo/rock.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow img-fluid">
+			</div>
+			
+			<div class="column col-sm-4">
+				<img src="bluenemo/rock_closeup.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow img-fluid">
+			</div>
+			
+		</div>
+				
+		<!-- The Modal/Lightbox -->
+		<div id="myModal" class="modal">
+		  <span class="close cursor" onclick="closeModal()">&times;</span>
+		  <div class="modal-content">
+
+			<div class="mySlides">
+			  <div class="numbertext">1 / 4</div>
+			  <img src="img1_wide.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">2 / 4</div>
+			  <img src="img2_wide.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+			  <div class="numbertext">3 / 4</div>
+			  <img src="img3_wide.jpg" style="width:100%">
+			</div>
+
+
+			<!-- Next/previous controls -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<!-- Caption text -->
+			<div class="caption-container">
+			  <p id="caption"></p>
+			</div>
+
+			<!-- Thumbnail image controls -->
+			<div class="column">
+			  <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Bluenemo">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Bluenemo">
+			</div>
+
+			<div class="column">
+			  <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Bluenemo">
+			</div>
+
+		  </div>
+		</div>
+
 			
 			
 			<footer class="page-footer" id="stopka">
 			
-			<div class="row">
-			
-			
-			
-			</div>
+			<div style="height:60px; color:#4866AF;"></div> 
 
 			</footer>
 			
 		</div>
 
 
-		</body>
+		<script>
+		// Open the Modal
+		function openModal() {
+		  document.getElementById("myModal").style.display = "block";
+		}
+
+		// Close the Modal
+		function closeModal() {
+		  document.getElementById("myModal").style.display = "none";
+		}
+
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		</script>
+
+	</body>
 		
 		<!-- bootstrap -->	
     <!-- 2: jQuery, Popper.js, and Bootstrap JS -->
